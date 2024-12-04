@@ -1,4 +1,9 @@
 import type { Config } from 'jest'
+import nextJest from 'next/jest'
+
+const createJestConfig = nextJest({
+  dir: './'
+})
 
 const config: Config = {
   testEnvironment: 'jsdom',
@@ -6,10 +11,7 @@ const config: Config = {
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.ts(x)?'],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
-  modulePaths: ['<rootDir>/src/'],
-  transform: {
-    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }]
-  }
+  modulePaths: ['<rootDir>/src/']
 }
 
-export default config
+export default createJestConfig(config)

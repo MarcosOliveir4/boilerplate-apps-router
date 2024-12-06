@@ -13,7 +13,11 @@ const GlobalStyle = createGlobalStyle`
     font-size: 62.5%; // 1rem = 10px
   }
   html, body, #__next {
-    height: 100%;
+    height: 100vh;
+  }
+
+  body {
+    font-family:  -apple-system, Roboto, sans-serif;
   }
 `
 

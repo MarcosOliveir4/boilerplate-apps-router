@@ -4,7 +4,7 @@ import nextJest from 'next/jest'
 const createJestConfig = nextJest({
   dir: './'
 })
-
+// main.stories.tsx
 const config: Config = {
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
@@ -14,7 +14,9 @@ const config: Config = {
     '!src/app/**', // should be tested in e2e
     '!src/lib/registry.tsx',
     '!src/types/**',
-    '!src/styles/**'
+    '!src/styles/**',
+    '!src/**/*.mdx',
+    '!src/**/*.stories.@(js|jsx|mjs|ts|tsx)'
   ],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   modulePaths: ['<rootDir>/src/'],
